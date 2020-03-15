@@ -21,9 +21,9 @@ const App = (props) => {
      }} />
      <Route path='/movies/:id' render={props => {
         return (
-              <Movie {...props} />
+              <Movie addToSavedList={addToSavedList} {...props} />
            )
-     }} />
+     }} /> {/* Stretch: addToSavedList */}
     </div>
   );
 };

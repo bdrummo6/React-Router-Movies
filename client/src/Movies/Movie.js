@@ -2,6 +2,22 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Movie = (props) => {
+   const cardStyle = { // Styling added for the movie card
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      color: '#ADD8E6',
+      backgroundColor: '#778899',
+      border: '2px solid #ADD8E6',
+      borderRadius: '2%'
+   };
+
+   const titleStyle = { // Styling for the title of the movie, so it is centered on the card
+      display: 'flex',
+      alignSelf: 'center'
+   };
+
+
    const [movie, setMovie] = useState();
 
    useEffect(() => {
@@ -33,8 +49,8 @@ const Movie = (props) => {
 
   return (
     <div className="save-wrapper">
-      <div className="movie-card">
-        <h2>{title}</h2>
+      <div className="movie-card" style={cardStyle}>
+        <h2 style={titleStyle}>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
         </div>
